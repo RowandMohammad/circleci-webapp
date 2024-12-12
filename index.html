@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Web App</title>
+  <style>
+    #new-text {
+      display: none;
+      font-weight: bold;
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <button id="show-text-button">Show Text</button>
+  <div id="new-text">SOME NEW TEXT!</div>
+
+  <script>
+    const button = document.getElementById('show-text-button');
+    const newTextDiv = document.getElementById('new-text');
+
+    button.addEventListener('click', () => {
+      newTextDiv.style.display = 'block';
+    });
+  </script>
+</body>
+</html>
