@@ -14,10 +14,14 @@ jobs:
       - node/install-packages:
           pkg-manager: npm
       - run:
+          name: Ensure Test Results Directory Exists
+          command: mkdir -p test-results
+      - run:
+          name: Install jest-junit
           command: npm install jest-junit
       - run:
           name: Run tests
-          command: npm run test --ci --runInBand --reporters=default --reporters=jest-junit
+          command: npm run test --ci --runInBand
       - store_test_results:
           path: ./test-results/
   deploy:
